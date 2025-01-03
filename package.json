@@ -1,0 +1,21 @@
+{
+  "name": "ai-workshop",
+  "version": "1.0.0",
+  "description": "Clinical AI workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db": "docker run --network n8n-project_demo --name ai-workshop -p 5456:5432  -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=ai-workshop -d postgres",
+    "start": "turbo run dev & npm run db",
+    "dev": "turbo run dev"
+  },
+  "author": "Oron mozes",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "npm@8.19.2",
+  "workspaces": [
+    "projects/*"
+  ]
+}
